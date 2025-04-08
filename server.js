@@ -37,6 +37,10 @@ const transporter = nodemaielr.createTransport({
   },
 });
 
+app.get('/',(req,res)=>{
+  res.json('main')
+})
+
 // POST ~/api/send-email
 app.post("/api/send-email", (req, res) => {
   const { name, email, message } = req.body;
