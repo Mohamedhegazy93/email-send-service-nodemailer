@@ -45,7 +45,7 @@ app.get('/',(req,res)=>{
 app.post("/api/send-email", (req, res) => {
   const { name, email, message } = req.body;
 
-  ejs.renderFile("mail.ejs", { name, email, message }, (err, data) => {
+  ejs.renderFile(__dirname + "/mail.ejs", { name, email, message }, (err, data) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Error rendering email template");
