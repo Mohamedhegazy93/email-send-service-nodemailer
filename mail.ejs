@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New User Contact</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .contact {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .message-box {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px solid #cce5ff;
+        }
+        .message-box p {
+            color: #333;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>New User <span class="contact">Contact</span></h1>
+        <p><strong>User Name:</strong> <%= name %></p>
+        <p><strong>User Email:</strong> <%= email %></p>
+        <div class="message-box">
+            <p><strong>Message:</strong> <%= message %></p>
+        </div>
+    </div>
+</body>
+</html>
