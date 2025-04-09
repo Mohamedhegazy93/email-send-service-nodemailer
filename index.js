@@ -59,7 +59,7 @@ app.post("/api/send-email", (req, res) => {
       from: email,
       to: process.env.USER,
       subject: "New message To Adsera",
-      Template: data,
+      html: data,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
