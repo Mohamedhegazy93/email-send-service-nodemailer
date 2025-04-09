@@ -5,6 +5,10 @@ import ejs from "ejs";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import cors from "cors";
+import { fileURLToPath } from 'url';
+import path from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config();
 
 const app = express();
@@ -45,7 +49,7 @@ app.get('/',(req,res)=>{
 app.post("/api/send-email", (req, res) => {
   const { name, email, message } = req.body;
 
-  ejs.renderFile(__dirname + "/mail.ejs", { name, email, message }, (err, data) => {
+  ejs.renderFile(path.join(__dirname, 'mail.ejs'), { name, email, message }, (err, data) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Error rendering email template");
